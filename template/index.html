@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>front page</title>
+    <script src="{{ url_for('static',filename='css/style.css') }}"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static',filename='images/sports-car-races-through-dark-blurred-motion-generative-ai.jpg') }}");
+            background-size: cover;
+            height: 100vh;
+            justify-content: center;
+            background-repeat: no-repeat;
+            background-position: top center;  
+            opacity: 0; 
+            transition: opacity 2s ease;
+
+        }
+    
+        
+
+        .index{
+            
+               color: rgb(0, 0, 0);
+               padding: 15px 32px;
+               text-align: center;
+               text-decoration: none;
+               display: inline-block;
+               font-size: 30px;
+               font-weight: bold;
+               margin: 4px 2px;
+               
+               border-radius: 20px;
+               cursor: pointer;
+
+        }
+        .index:hover{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+
+        }
+        nav {
+          background-color:transparent;
+          overflow: hidden;
+          transition: 1.4s;
+          padding-top: 100px;
+          padding-left: 100px;         
+        }
+    
+        nav a {
+          float: left;
+          display: block;
+          color: rgb(0, 0, 0);
+          text-align: center;
+          size: 100px;
+          font-size: 30px;
+          font-weight: bolder;
+          padding: 14px 16px;
+          text-decoration: none;
+          transition: 0.4s;
+        }
+    
+        nav a:hover {
+          background-color: #000000;
+          color: rgb(255, 255, 255);
+          transition: 0.4s;
+        }
+        h1{
+          color: rgb(0, 0, 0);
+          text-align: center;
+          size: 100px;
+          font-size: 30px;
+          font-weight: bolder;
+          padding-top: 60px;
+           }
+
+           .car-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap:200px;
+            justify-content: space-around;
+          }
+      
+          .car-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin: 1rem;
+            max-width: 300px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+            transform: translate3d(0,0,0);
+          }
+      
+          .car-card:hover {
+            transform: scale(1.05);
+          }
+      
+          .car-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          .car-details{    
+             
+              width: 100%;
+              height: 10%;
+              
+              transform: translateY(100%); /* Initially move the page below the viewport */
+              animation: risePage 5s ease-out forwards;
+            }
+     
+    </style>
+</head>
+
+<body>
+  <h1>CHILD VACCINATION MANAGEMENT SYSTEM</h1>
+  <nav class="response">
+   
+     <a href="/register" class="form">PATIENT</a>
+      <a href="/admin_login" class="form">DOCTOR</a>
+      
+  </nav>
+    <form method="POST" action="/index">
+      
+
+</form>
+      
+  <!--<div class="car-details">
+    <div class="car-card">
+      <img src="static/images/car1.jpg" alt="Car 1" class="car-image">
+      <h3>Car Model 1</h3>
+      <p>Year: 2022</p>
+      <p>Color: white</p>
+      
+    </div>
+
+    <div class="car-card">
+      <img src="static/images/car2.jpg" alt="Car 2" class="car-image">
+      <h3>Car Model 2</h3>
+      <p>Year: 2023</p>
+      <p>Color: Blue</p>
+      
+    </div>
+    
+    <div class="car-card">
+      <img src="static/images/car3.jpg" alt="Car 2" class="car-image">
+      <h3>Car Model 3</h3>
+      <p>Year: 2023</p>
+      <p>Color: Green</p>
+      
+    </div>
+  </div>-->
+
+<script>
+    
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.body.style.opacity = '1'; 
+    }, 10);
+  });
+  </script>
+</body>
+</html>

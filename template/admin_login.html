@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin Login</title>
+</head>
+<body>  
+
+    <form method="post" action="/admin_login" >
+        <h2>ADMIN LOG-IN </h2>
+
+<br>
+        <div class="container">
+        <div class="">
+        <label for="username">Username:</label></div>
+        <input type="text" id="username" class="username" name="username" required>
+        <br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" class="password" name="password" required>
+        <br><br>
+        <input type="submit" value="Login" class="btn">
+   
+</div>
+</form>
+    <style>
+        img{
+            width: 400px;
+            max-height: auto;
+            display: block;
+            margin: auto;
+           
+        }
+        .username{
+           width: 300px;
+           font-weight: bold;
+           height: max-content;
+           font-size: large;
+           padding:0.5em;
+        }
+        .password{
+            width: 300px;
+           font-weight: bold;
+           height: max-content;
+           font-size: large;
+           padding:0.5em;
+        }
+
+        h2{
+            font-family:Arial, Helvetica, sans-serif;
+            color: rgb(12, 12, 12);
+        }
+        body { 
+            margin-top: 200px; 
+            background-image:url("{{ url_for('static',filename='images/Untitled-2.jpg') }}");
+            background-size: cover; 
+            background-repeat: no-repeat;                   
+        }
+        .btn{
+            background-color: #092fda;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        form{
+            text-align: center;            
+            font-size: 30px;
+            font-weight: bold;
+            padding-left: 800px;
+        }
+        .container{
+            width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid rgb(221, 9, 9);
+            border-radius: 20px;
+            background-color: burlywood;
+            
+        }
+        .container:hover{
+            
+            color: rgb(25, 0, 247);
+            box-shadow:0 0 2rem 0 rgb(19, 178, 241) ;
+        }
+
+       
+    </style>
+    <script>
+    function validateForm() {
+        var Username = document.getElementById("username").value.trim();
+        var Password = document.getElementById("password").value.trim();
+    
+        
+        if (Username == "username") {
+            alert("welcome admin");
+            return true; 
+        }
+        return true; 
+    }
+</script>
+</body>
+</html>

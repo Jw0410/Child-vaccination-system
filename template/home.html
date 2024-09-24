@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car Bill System</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}" >
+</head>
+<body action="/home">
+
+    <header>
+        <h1>Patient Details</h1>
+    </header>
+    
+    <form id="billForm" action="/home" method="POST" onsubmit="success()">
+    <section class="container">
+
+            <label for="childname">CHILD NAME</label>
+            <input type="text" id="childname" name="childname" required>
+
+            <label for="childage">CHILD AGE</label>
+            <input type="text" id="childage" name="childage" required>
+
+            <label for="gender">GENDER</label>
+            <input type="text" id="gender" name="gender" required>
+                     
+            <label for="date">DATE</label>
+            <input type="date" id="date" name="date" pattern="%d-%m-%y" required>   
+            
+            <label for="time">TIME</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="fathername">FATHER NAME</label>
+            <input type="text" id="fathername" name="fathername" required>
+
+            <label for="childdob">CHILD DOB</label>
+            <input type="date" id="childdob" name="childdob" required>
+
+            <label for="phoneno">PHONE NO</label>
+            <input type="text" id="phoneno" name="phoneno" required>
+
+            <label for="address">ADDRESS</label>
+            <input type="text" id="address" name="address" required>
+            
+            <button type="submit" value="Add">SUBMIT</button>
+<br><br>
+<a href='/'>
+    <button type="button">BACK TO HOME</button></a>
+            
+        
+    </section>
+    
+</form> 
+
+
+    <style>
+        body{
+            background-image:url("{{ url_for('static',filename='images/car_details.jpg') }}");
+            background-size: cover; 
+            background-repeat: no-repeat;
+        }
+
+        input[type="radio"] { 
+            margin-right: 5px; 
+        } 
+
+        option{
+            padding-left: 20px;
+        }
+    </style>
+
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+    <script>
+        function success(){
+            alert("Bill Added Successfully")
+        }
+    </script>
+</body>
+</html>

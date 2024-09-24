@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user billing details</title>
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+</head>
+    
+    <body>
+    
+        <h2>Car Details</h2>
+        <form method="GET" action="{{ url_for('display_details') }}">
+           
+            <input type="text" id="search_query" class="txtbox" name="search_query" placeholder="Enter your search here" pattern="[A-Za-z0-9]*">
+            <button type="submit">Search</button>
+        </form><br>
+        <table border="5" id="show">
+            <thead>
+                <tr>
+                    <th>Child Name</th>
+                    <th>Child Age</th>
+                    <th>Gender</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Father Name</th>
+                    <th>Child DOB</th>
+                    <th>Phone No</th>
+                    <th>Address</th>
+                </tr>
+        </thead>
+        <tbody>
+            {% for detail in patient_detail %}
+                <tr>
+                    <td>{{ detail[0] }}</td>
+                    <td>{{ detail[1] }}</td>
+                    <td>{{ detail[2] }}</td>
+                    <td>{{ detail[3].strftime('%d-%m-%y')}}</td>
+                    <td>{{ detail[4] }}</td>
+                    <td>{{ detail[5] }}</td>
+                    <td>{{ detail[6] }}</td>
+                    <td>{{ detail[7] }}</td>
+                    <td>{{ detail[8] }}</td>
+                    <!-- Add more cells based on your table structure -->
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+        <style>
+            button{
+                background-color: #091ee0;
+                color: white;
+                border: none;
+                padding: 13px 30px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            form{
+
+            text-align: right;
+                   
+            }
+            .label{
+                size: 200px;
+            }
+            .txtbox{
+                width: 300px;
+                font-weight: bold;
+                height: max-content;
+                font-size: large;
+                padding:0.5em;
+            }
+    
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+        
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+        
+            }
+        
+            th {
+                background-color: #f2f2f2;
+            }
+
+            body{
+                background-image: url("{{ url_for('static',filename='images/display_details.jpg') }}");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+
+        <a href="/"><button type="button">BACK TO HOME</button></a>
+            
+    
+   
+</body>
+</html>
